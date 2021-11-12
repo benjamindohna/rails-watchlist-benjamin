@@ -1,0 +1,26 @@
+.movie-form-container {
+  margin-top: 32px;
+  width: 32%;
+  text-align: center;
+  h2 {
+    color: $light;
+  }
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 8px;
+  border: none;
+}
+
+.delete-btn {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  text-decoration: none;
+  font-size: 24px;
+  color: $light;
+  &:hover {
+    color: $red;
+  }
+}

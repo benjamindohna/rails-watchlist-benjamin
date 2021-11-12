@@ -1,0 +1,28 @@
+#new_list {
+  display: flex;
+  width: 25%;
+  margin: 32px auto;
+  height: 48px;
+  * {
+    border: none;
+    margin: none;
+  }
+  input[type='text']{
+    width: 75%;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    padding: 16px;
+  }
+  input[type='submit']{
+    width: 25%;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    font-size: 24px;
+    background-color: $blue;
+    color: $light;
+    transition: .3s;
+    &:hover{
+      background-color: $red;
+    }
+  }
+}

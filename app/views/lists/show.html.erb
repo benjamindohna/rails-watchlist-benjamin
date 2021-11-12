@@ -1,0 +1,21 @@
+<div class="banner container">
+  <div>
+    <h2><%= @list.name %></h2>
+  </div>
+  <%= link_to 'Add a movie', new_list_bookmark_path(@list), class: 'my-btn' %>
+</div>
+<div class="container movie-wrapper">
+  <% @list.movies.each do |movie| %>
+    <div class="movie-card">
+      <img src=<%= movie.poster_url %> alt="movie poster" class='img-div'>
+      <div class="info-div">
+        <h3><%= movie.title %> (<%= movie.rating %>)</h3>
+        <p><%= movie.overview %></p>
+        <% bookmark = Bookmark.find { |bookmark| bookmark.movie_id == movie.id } %>
+        <%= link_to list_bookmark_path(@list, bookmark), method: 'delete', data: { confirm: 'Are you sure?' }, class: 'delete-btn' do %>
+          <i class="fas fa-trash-alt"></i>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

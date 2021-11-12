@@ -1,0 +1,14 @@
+.banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px 16px;
+  margin-bottom: 64px;
+  h2 {
+    color: $light-blue;
+    font-size: 48px;
+  }
+  img {
+    width: 40%;
+  }
+}

@@ -5,12 +5,18 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <nav class="navbar my-nav container">
+      <p class="navbar-brand">
+        <%= image_tag "logo.svg", alt: "logo", width: 70 %>
+        RailsWatchList
+      </p>
+      <%= link_to 'My Lists', lists_path, class: 'nav-item nav-link my-link' %>
+    </nav>
     <%= yield %>
   </body>
 </html>

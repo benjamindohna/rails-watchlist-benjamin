@@ -1,0 +1,24 @@
+<div class="banner container">
+  <div>
+    <h2>Keep track of your movies with RailsWatchList.</h2>
+  </div>
+  <%= image_tag "banner_illustration.svg", alt: "banner img" %>
+</div>
+<div class="container list-card-container">
+  <% @lists.each do |list| %>
+    <%= link_to list_path(list.id), class: 'card list-card' do %>
+      <h3><%= list.name %></h3>
+      <% if list.movies.count == 1 %>
+        <p>1 movie</p>
+      <% elsif list.movies.count > 1 %>
+        <p><%= list.movies.count %> movies</p>
+      <% else %>
+        <p>No movies yet</p>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
+  <%= simple_form_for @list do |f| %>
+    <%= f.input_field :name, placeholder: 'Add a new list', label: false, autocomplete: 'off' %>
+    <%= f.submit '+' %>
+  <% end %>
